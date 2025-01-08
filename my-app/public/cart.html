@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relique Jewellery</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+
+    <section id='header'>
+        <a href="#"><img src="img/logo.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" id='lg-bag' href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <button class="normal logout-btn">Logout</button>
+                <a href="#" id="close" class="far fa-times"></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id='bar' class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+        <h2>#Shopping Cart</h2>
+        <p>Check Out Now!</p>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <p>Note: As we are a small business who created this website for ourselves, the checkout button will instead allow us to contact you via email to purchase the products in your basket. This is to reduce the risks against our company. We will aim to reply to all purchases within 24 hours.</p>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Size</td>
+                    <td>Quantity</td>
+                    <td>Subtotals</td>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Apply Coupons</h3>
+            <div>
+                <input id="coupon-input" type="text" placeholder="Enter Your Coupon">
+                <button id="coupon-button" class="normal">Apply</button>
+            </div>
+            <div id="applied-coupon" style="display: none;">
+                <p>
+                    <span id="coupon-name"></span>
+                    <button id="remove-coupon" style="margin-left: 10px;">✖</button>
+                </p>
+            </div>
+            
+        </div>
+        <div id="subtotal">
+            <h3>Cart Totals</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td id="cart-subtotal">£0.00</td>
+                    <td id="discount-amt"></td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong id="cart-total">£0.00</strong></td>
+                </tr>
+            </table>
+            <input type="email" id="checkout-email" placeholder="Your Email Address..." required>
+            <button id="checkout" class="normal">Proceed to checkout</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.png">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> Exeter Street Exeter EX1 SUX</p>
+            <p><strong>Phone: </strong> +07377675763</p>
+            <p><strong>Opening Hours: </strong> 10:00 - 18:00, Mon - Fri</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/people/Relique/61566700997207/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/relique_jewels" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/relique.jewellery/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.pinterest.com/relique_jewels/" target="_blank" title="Pinterest">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/relique_jewels" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@relique.jewellery" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="information.html">Delivery Information</a>
+            <a href="information.html">Privacy Policy</a>
+            <a href="information.html">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="administration.html">Sign in (admin only)</a>
+            <a href="cart.html">View Cart</a>
+            
+            <a href="information.html">Help</a>
+        </div>
+        <div class="copyright">
+            <p>©2024, Relique Jewellery</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Handle cart functionality
+        window.onload = function () {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartSubtotalElement = document.getElementById('cart-subtotal');
+            const cartTotalElement = document.getElementById('cart-total');
+            const cartdiscount = document.getElementById('discount-amt');
+            const appliedCoupon = JSON.parse(localStorage.getItem('appliedCoupon')) || null;
+
+            let cartSubtotal = 0;
+
+            // Clear any existing items in the cart
+            cartItemsContainer.innerHTML = '';
+
+            // Populate cart with stored items
+            cart.forEach((item, index) => {
+                let subtotal = item.price * item.quantity;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><a href="#" class="remove-item" data-index="${index}"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="${item.img}" alt="${item.name}"></td>
+                    <td>${item.name}</td>
+                    <td>£${item.price}</td>
+                    <td>${item.size}</td>
+                    <td><input type="number" value="${item.quantity}" min="1" class="quantity" data-index="${index}"></td>
+                    <td>£${subtotal}</td>
+                `;
+                cartItemsContainer.appendChild(row);
+                cartSubtotal += subtotal;
+            });
+
+            // Update cart totals
+            cartSubtotalElement.textContent = `£${cartSubtotal.toFixed(2)}`;
+            updateCartTotals(cartSubtotal); // Ensure totals are updated when the page loads
+
+            // Handle item removal
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = e.target.closest('a').dataset.index;
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    window.location.reload();
+                });
+            });
+
+            // Handle quantity changes
+            document.querySelectorAll('.quantity').forEach(input => {
+                input.addEventListener('input', (e) => {
+                    const index = e.target.dataset.index;
+                    const newQuantity = parseInt(e.target.value);
+
+                    if (newQuantity <= 0) return; // Avoid zero or negative quantity
+
+                    cart[index].quantity = newQuantity;
+                    cart[index].subtotal = cart[index].price * newQuantity;
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    window.location.reload();
+                });
+            });
+
+            // Coupon functionality
+            function updateCartTotals(cartSubtotal) {
+                let total = cartSubtotal;
+
+                // Apply the coupon if available
+                if (appliedCoupon && appliedCoupon.type === 'discount') {
+                    total -= (cartSubtotal * appliedCoupon.amount) / 100;
+                    cartdiscount.textContent = `-£${(cartSubtotal * appliedCoupon.amount / 100).toFixed(2)}`;
+                } else {
+                    cartdiscount.textContent = '£0.00';
+                }
+                if (appliedCoupon && appliedCoupon.type === 'fixed') {
+                    total = (cartSubtotal -appliedCoupon.amount);
+                    cartdiscount.textContent = `-£${( appliedCoupon.amount)}`;
+                } else {
+                    cartdiscount.textContent = '£0.00';
+                }
+
+                cartTotalElement.textContent = `£${total.toFixed(2)}`;
+            }
+
+            // Update UI for applied coupon
+            if (appliedCoupon) {
+                const appliedCouponDiv = document.getElementById('applied-coupon');
+                const couponNameSpan = document.getElementById('coupon-name');
+                const couponInput = document.getElementById('coupon-input');
+
+                appliedCouponDiv.style.display = 'block';
+                couponNameSpan.textContent = `${appliedCoupon.couponcode} (${appliedCoupon.type === 'discount' ? appliedCoupon.amount + '% off' : appliedCoupon.amount + '£ off'})`;
+
+                couponInput.value = '';
+
+                // Ensure totals are updated when coupon is applied
+                updateCartTotals(cartSubtotal);
+            }
+        };
+
+
+        
+        
+    
+
+            
+    </script>
+    <script type="module" src="script.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    
+    
+
+</body>
+
+</html>

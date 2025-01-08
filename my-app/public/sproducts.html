@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relique Jewellery</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+
+    <section id="header"> 
+        <a href="#"><img src="img/logo.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a  href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a id="lg-bag" href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <button class="normal logout-btn">Logout</button>
+                <a href="#" id="close" class="far fa-times"></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="" width="100%" id="MainImg">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="" width="100%" class="small-img">
+                </div>
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h6></h6>
+            <h4 id="product-name"></h4>
+            <h2 id="product-price"></h2>
+            <select id="product-size">
+                <option>Select Size</option>
+                <option>XS</option>
+                <option>S</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+            </select>
+            <input type="number" value="1" id="product-quantity">
+            <button class="normal" id="add-to-cart">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span id="product-description"></span>
+        </div>
+        <button id="edit-product-btn" class="normal" style="display: none;">Edit</button> <!-- This will only be visible if a session is found -->
+    </section>
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal-btn">&times;</span>
+            <h3>Edit Product</h3>
+            <form id="edit-product-form">
+                <div>
+                    <label for="edit-product-name">Product Name:</label>
+                    <input type="text" id="edit-product-name" name="product-name" required>
+                </div>
+                <div>
+                    <label for="edit-product-description">Product Description:</label>
+                    <textarea id="edit-product-description" name="product-description" required></textarea>
+                </div>
+                <div>
+                    <label for="edit-product-price">Product Price:</label>
+                    <input type="float" id="edit-product-price" name="product-price" required>
+                </div>
+                <div>
+                    <label for="edit-product-brand">Product Brand:</label>
+                    <input type="text" id="edit-product-brand" name="product-brand" required>
+                </div>
+
+                <div>
+                    <label for="edit-product-feature">Feature this product?</label>
+                    <input type="checkbox" id="edit-product-feature" name="product-feature">
+                </div>
+                <button type="submit" class="normal">Save Changes</button>
+                <button type="button" id="delete-product-btn" class="delete normal">Delete Product</button>
+            </form>
+        </div>
+    </div>
+    
+    <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="img/products/f1.jpg">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div clas="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>£78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f2.jpg">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div clas="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>£78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f3.jpg">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div clas="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>£78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="img/products/f4.jpg">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div clas="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>£78</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </div>
+        
+        </div>
+    </section>
+    
+        
+
+
+
+    
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up for Newsletters</h4>
+            <p>Get latest <span>special offers</span> and updates via Email</p>
+        </div>
+        <div class="form">
+            <input type="email" id="newsletter-email" placeholder="Your Email Address..." required>
+            <button class="normal" id="subscribe-btn">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col"> 
+            <img class="logo"src="img/logo.png">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> Exeter Street Exeter EX1 SUX</p>
+            <p><strong>Phone: </strong> +07377675763</p>
+            <p><strong>Opening Hours: </strong> 10:00 - 18:00, Mon - Fri</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/people/Relique/61566700997207/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/relique_jewels" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/relique.jewellery/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.pinterest.com/relique_jewels/" target="_blank" title="Pinterest">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/relique_jewels" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@relique.jewellery" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="information.html">Delivery Information</a>
+            <a href="information.html">Privacy Policy</a>
+            <a href="information.html">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="administration.html">Sign in (admin only)</a>
+            <a href="cart.html">View Cart</a>
+
+            <a href="information.html">Help</a>
+
+        </div>
+        <div class="copyright">
+            <p> ©2024, Relique Jewellery</p>
+        </div>
+        
+
+    </footer>
+
+
+</body>
+<script type="module" src="src/lib/appwrite.js"></script>
+<script type="module" src="script.js"></script>
+<script>
+    var MainImg= document.getElementById('MainImg')
+    var smallimg = document.getElementsByClassName('small-img')
+    smallimg[0].onclick = function(){
+        MainImg.src= smallimg[0].src
+    }
+    smallimg[1].onclick = function(){
+        MainImg.src= smallimg[1].src
+    }
+    smallimg[2].onclick = function(){
+        MainImg.src= smallimg[2].src
+    }
+    smallimg[3].onclick = function(){
+        MainImg.src= smallimg[3].src
+    }
+</script>
+
+</html>

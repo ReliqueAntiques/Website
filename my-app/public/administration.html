@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relique Jewellery</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+
+    <section id="header">
+        <a href="#"><img src="img/logo.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+                <li><a id="lg-bag" href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <button class="normal logout-btn">Logout</button>
+                <a href="#" id="close" class="far fa-times"></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id='bar' class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+        <h2>Admin Panel</h2>
+        <p>Access for administrators only</p>
+    </section>
+
+    <section id="admin-login" >
+        <!-- Admin Sign-In Form -->
+        <div class="login-container" id="login-container">
+            <form id="login-form">
+                <h3>Sign in (admin only)</h3>
+                <div id="error-message" class="error-message" style="display:none;"></div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required />
+                </div>
+                <button type="submit" class="normal">Login</button>
+            </form>
+        </div>
+        <div class="admin-welcome" id="admin-welcome" style="display: none;">
+            <h3>Welcome to the Admin Panel</h3>
+            <div>
+
+                <h2 id="iddddd">Current Orders to fulfill:</h2>
+                <section id="order-toggle">
+                    <button id="toggle-orders">Show All Orders</button>
+                </section>
+                <section id="current-orders">
+                    
+                    
+                </section>
+            </div>
+            <hr class="full-width-line">
+
+            
+            
+            <div class="admin-upload">
+                <div>
+
+                    
+                    <section id="upload-product" class="section-p1">
+                            <h2>Upload a New Product</h2>
+                            <form id="product-upload-form">
+                                <div class="form-group">
+                                    <label for="name">Product Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter product name" required>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" name="description" placeholder="Enter product description" required></textarea>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <input type="number" id="price" name="price" placeholder="Enter product price" required>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="brand">Brand</label>
+                                    <input type="text" id="brand" name="brand" placeholder="Enter product brand" required>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="feature">Feature this product?</label>
+                                    <input type="checkbox" id="editpfeature" name="feature" />
+                                </div>
+                                
+                    
+                                <div class="form-group">
+                                    <label for="image1">Image 1</label>
+                                    <input type="file" id="image1" name="image1" accept="image/*" required>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="image2">Image 2</label>
+                                    <input type="file" id="image2" name="image2" accept="image/*">
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="image3">Image 3</label>
+                                    <input type="file" id="image3" name="image3" accept="image/*">
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="image4">Image 4</label>
+                                    <input type="file" id="image4" name="image4" accept="image/*">
+                                </div>
+                    
+                                <button type="submit" class="normal">Upload Product</button>
+                            </form>
+                    </section>
+
+                </div>
+                <div>
+                    <section id="upload-coupon" class="section-p1">
+                        <h2>Upload a New Coupon</h2>
+                        <form id="coupon-upload-form">
+                            <div class="form-group">
+                                <label for="couponcode">Coupon Code</label>
+                                <input type="text" id="couponcode" name="couponcode" placeholder="Enter coupon code" required>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="uses">Max Uses</label>
+                                <input type="number" id="uses" name="uses" placeholder="Enter max uses" required>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="date" id="expiry" name="expiry" required>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="type">Coupon Type</label>
+                                <select id="type" name="type" required>
+                                    <option value="fixed">Fixed Amount</option>
+                                    <option value="discount">Percentage Discount</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="amount">Discount Size/Percentage</label>
+                                <input type="number" id="amount" name="amount" placeholder="Enter Discount" required>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="minpurchase">Minimum Purchase (£)</label>
+                                <input type="number" id="minpurchase" name="minpurchase" placeholder="Enter minimum purchase amount" required>
+                            </div>
+                    
+                            <button type="submit" class="normal">Upload Coupon</button>
+                        </form>
+                    </section>
+                    <section id="See-Coupons">
+                        <h3>All Currently Active Coupons</p>
+                            <div id="coupon-container">
+                            <!-- Coupons will be dynamically inserted here -->
+                            </div>
+                            <button id="next-coupon">Next Coupon</button>
+                    </section>
+
+                </div>
+
+                
+                
+
+
+            </div>
+            <hr class="full-width-line">
+
+            <h3>Click on Posts to edit</h3>
+            <section id="product1" class="section-p1">
+                <div class="pro-container" id="product-container">
+                    <!-- Dynamic products will be injected here -->
+                </div>
+            </section>
+            
+            <section id="pagination" class="section-p1">
+                <!-- Pagination links will be dynamically inserted here -->
+            </section>
+            <section id="banner" class="section-m1">
+                
+            </section>
+            <div class="admin-upload">
+                <div>
+                    <section id="upload-blog" class="section-p1">
+                        <h2>Upload a New Blog</h2>
+                        <form id="blog-upload-form">
+                            <div class="form-group">
+                                <label for="title">Blog Title</label>
+                                <input type="text" id="title" name="title" placeholder="Enter Blog title" required>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="author">Author</label>
+                                <input type="text" id="author" name="author" placeholder="Enter Author name" required>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="excerpt">Excerpt</label>
+                                <textarea id="excerpt" name="excerpt" placeholder="Enter blog excerpt" required></textarea>
+                            </div>
+                    
+                            <div class="form-group">
+                                <label for="content">Content</label>
+                                <textarea id="content" name="content" placeholder="Enter blog content" required></textarea>
+                            </div>
+                    
+                            <div id="image-group">
+                                <div class="form-group">
+                                    <label for="image1">Image 1</label>
+                                    <input type="file" id="blogimage1" name="image1" accept="image/*" required>
+                                </div>
+                            </div>
+                    
+                            <button type="button" id="add-more-images" class="normal">Add More Images</button>
+                            <button type="submit" class="normal">Upload Blog</button>
+                        </form>
+                    </section>
+                </div>
+                <div>
+                    <section id='blog'>
+                        <div id="blog-container">
+                            <!-- Dynamic blog posts will be inserted here -->
+                        </div>
+                    </section>
+                    
+            
+                    
+                    <section id="pagination" class="section-p1">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+                    </section>
+                </div>
+                
+            </div>
+            
+            
+            
+        </section>
+            
+            
+            <button class="normal" id="logout-btn" class="normal">Logout</button>
+        </div>
+
+
+
+    </section>
+
+
+    <section id="footer">
+        <footer class="section-p1">
+            <div class="col">
+                <img class="logo" src="img/logo.png">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong> Exeter Street Exeter EX1 SUX</p>
+                <p><strong>Phone: </strong> +07377675763</p>
+                <p><strong>Opening Hours: </strong> 10:00 - 18:00, Mon - Fri</p>
+                <div class="follow">
+                    <h4>Follow us</h4>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/people/Relique/61566700997207/" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/relique_jewels" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/relique.jewellery/" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.pinterest.com/relique_jewels/" target="_blank" title="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/relique_jewels" target="_blank" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@relique.jewellery" target="_blank" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="about.html">About us</a>
+                <a href="information.html">Delivery Information</a>
+                <a href="information.html">Privacy Policy</a>
+                <a href="information.html">Terms & Conditions</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="administration.html">Sign in (admin only)</a>
+                <a href="cart.html">View Cart</a>
+
+                <a href="informationn.html">Help</a>
+            </div>
+            <div class="copyright">
+                <p> ©2024, Relique Jewellery</p>
+            </div>
+        </footer>
+    </section>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
