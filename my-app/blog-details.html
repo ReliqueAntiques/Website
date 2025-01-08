@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relique Jewellery</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/blog.css">
+</head>
+
+<body>
+
+    <section id="header"> 
+        <a href="#"><img src="img/logo.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a  href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a id="lg-bag" href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <button class="normal logout-btn">Logout</button>
+                <a href="#" id="close" class="far fa-times"></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="blog-details" class="section-p1">
+        <div id="blog-content">
+            <h1>Loading blog...</h1>
+        </div>
+        <button id="edit-blog-btn" class="normal" style="display: none;">Edit</button> <!-- This will only be visible if a session is found -->
+    </section>
+    <div id="edit-modal1" class="modal1">
+        <div class="modal-content1">
+            <span class="close-btn1" id="close-modal-btn1">&times;</span>
+            <h3>Edit Blog</h3>
+            <form id="edit-blog-form">
+                <div>
+                    <label for="edit-blog-title">Title:</label>
+                    <input type="text" id="edit-blog-title" name="blog-title" required>
+                </div>
+                <div>
+                    <label for="edit-blog-author">Author:</label>
+                    <input type="text" id="edit-blog-author" name="blog-author" required>
+                </div>
+                
+                <div>
+                    <label for="edit-blog-excerpt">Excerpt:</label>
+                    <input type="text" id="edit-blog-excerpt" name="blog-excerpt" required>
+                </div>
+                <div>
+                    <label for="edit-blog-content">Content:</label>
+                    <textarea id="edit-blog-content" name="blog-content" required></textarea>
+                </div>
+                <button type="submit" class="normal">Save Changes</button>
+                <button type="button" id="delete-blog-btn" class="delete normal">Delete Blog</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    
+    
+   
+    
+        
+
+
+
+    
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up for Newsletters</h4>
+            <p>Get latest <span>special offers</span> and updates via Email</p>
+        </div>
+        <div class="form">
+            <input type="email" id="newsletter-email" placeholder="Your Email Address..." required>
+            <button class="normal" id="subscribe-btn">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col"> 
+            <img class="logo" src="img/logo.png">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> Exeter Street Exeter EX1 SUX</p>
+            <p><strong>Phone: </strong> +07377675763</p>
+            <p><strong>Opening Hours: </strong> 10:00 - 18:00, Mon - Fri</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <a href="https://www.facebook.com/people/Relique/61566700997207/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/relique_jewels" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/relique.jewellery/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.pinterest.com/relique_jewels/" target="_blank" title="Pinterest">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/relique_jewels" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@relique.jewellery" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="administration.html">Sign in (admin only)</a>
+            <a href="cart.html">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+
+        </div>
+        <div class="copyright">
+            <p> ©2024, Relique Jewellery</p>
+        </div>
+        
+
+    </footer>
+
+
+</body>
+<script type="module" src="src/lib/appwrite.js"></script>
+<script type="module" src="script.js"></script>
