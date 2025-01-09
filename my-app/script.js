@@ -1,4 +1,4 @@
-import { Client, Databases,Storage,Query, Account } from 'appwrite';
+import { Client, Databases,Storage,Query, Account } from "https://cdn.jsdelivr.net/npm/appwrite@latest";
 // Wait for the DOM to be ready before running the scripts
 document.addEventListener("DOMContentLoaded", () => {
     const couponInput = document.getElementById('coupon-input');
