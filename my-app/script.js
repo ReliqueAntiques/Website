@@ -1,4 +1,4 @@
-import { Client, Databases,Storage,Query, Account } from "https://cdn.jsdelivr.net/npm/appwrite@latest";
+import Appwrite from "https://cdn.jsdelivr.net/npm/appwrite@9.0.0";
 // Wait for the DOM to be ready before running the scripts
 document.addEventListener("DOMContentLoaded", () => {
     const couponInput = document.getElementById('coupon-input');
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function fetchCoupon(couponCode) {
         try {
             const response = await databases.listDocuments(DATABASE_ID,'677b030500069bc11608', [
-                Query.equal('couponcode', couponCode),
+                Appwrite.Query.equal('couponcode', couponCode),
             ]);
             return response.documents[0]; // Return the first matching coupon
         } catch (error) {
@@ -192,14 +192,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     // Appwrite Client Setup
-    const client = new Client();
+    const client = new Appwrite.Client();
     client
         .setEndpoint('https://cloud.appwrite.io/v1') // Replace with your Appwrite endpoint
         .setProject('677a615c000e7be7bcd4'); // Replace with your Appwrite project ID
 
-    const databases = new Databases(client);
-    const storage = new Storage(client);
-    const account = new Account(client);
+    const databases = new Appwrite.Databases(client);
+    const storage = new Appwrite.Storage(client);
+    const account = new Appwrite.Account(client);
 
     const DATABASE_ID = '677a62e3001aa8bc5ceb';  // Replace with your actual Appwrite database ID
     const COLLECTION_ID = '677a62f2000ad4c4a861';  // Replace with your actual Appwrite collection ID
@@ -640,7 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 DATABASE_ID, // Replace with your database ID
                 '677b030500069bc11608', // Replace with your coupons collection ID
                 [
-                    Query.greaterThan('expiry', currentDate) // Filter coupons with expiry date greater than current date
+                    Appwrite.Query.greaterThan('expiry', currentDate) // Filter coupons with expiry date greater than current date
                 ]
             );
     
@@ -1282,7 +1282,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             // Fetch blog from the database based on blog ID
             const response = await databases.listDocuments(DATABASE_ID, '677bcc1e00009ca0d635', [
-                Query.equal('$id', blogId) // Replace with your query to get the blog
+                Appwrite.Query.equal('$id', blogId) // Replace with your query to get the blog
             ]);
             console.log(response.documents[0]);
     
@@ -1310,7 +1310,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             // Fetch product from the database based on product ID
             const response = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
-                Query.equal('$id', productId) // Replace with your query to get the product
+                Appwrite.Query.equal('$id', productId) // Replace with your query to get the product
             ]);
             console.log(response)
     
@@ -1830,7 +1830,7 @@ document.addEventListener("DOMContentLoaded", function() {
         try {
           // Change the query based on whether we are showing current orders or all orders
           const query = showCurrentOrders ? 
-            [Query.equal('completed', false)] : [];  // If showing current orders, filter by completed = false, otherwise fetch all
+            [Appwrite.Query.equal('completed', false)] : [];  // If showing current orders, filter by completed = false, otherwise fetch all
       
           const response = await databases.listDocuments(DATABASE_ID, '677e685300159239b0d2', query);
           const orders = response.documents;
