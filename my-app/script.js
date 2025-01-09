@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Appwrite Client Setup
     const client = new Client();
     client
-        .setEndpoint('https://cloud.appwrite.io/v1') // Replace with your Appwrite endpoint
+        .setEndpoint('https://reliqueantiques.github.io/') // Replace with your Appwrite endpoint
         .setProject('677a615c000e7be7bcd4'); // Replace with your Appwrite project ID
 
     const databases = new Databases(client);
